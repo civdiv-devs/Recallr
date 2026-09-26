@@ -117,15 +117,6 @@ None of these are supported yet.
 
 ---
 
-## Team
-
-Built by two developers working asynchronously across time zones.
-
-- **[Name]** — Data and backend
-- **[Name]** — Frontend
-
----
-
 ## Project Status
 
 🚧 **MVP in active development.** Vehicles only.
