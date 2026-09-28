@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { VehicleCard } from "@/components/vehicle-card";
 import {vehicles} from "@/lib/mock-data";
 
@@ -10,7 +11,13 @@ export default function DashboardPage() {
 
             <div className="space-y-3">
                 {vehicles.map((vehicle) => (
-                    <VehicleCard key={vehicle.id} vehicle={vehicle} />
+                    <Link
+                        key={vehicle.id}
+                        href={`/vehicles/${vehicle.id}`}
+                        className="block rounded-xl transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                        <VehicleCard vehicle={vehicle} />
+                    </Link>
                 ))}
             </div>
         </div>
