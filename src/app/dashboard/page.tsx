@@ -1,5 +1,4 @@
-import {Card, CardContent} from "@/components/ui/card";
-import {Badge} from "@/components/ui/badge";
+import { VehicleCard } from "@/components/vehicle-card";
 import {Vehicle} from "@/lib/types";
 
 const vehicles: Vehicle[] = [
@@ -38,44 +37,16 @@ const vehicles: Vehicle[] = [
     },
 ];
 
-const statusLabels: Record<Vehicle["status"], string> = {
-    no_open_recalls: "No Open Recalls",
-    open_recall: "Open Recalls",
-    urgent: "Urgent",
-    unverified: "Unverified",
-};
-
-const statusStyles: Record<Vehicle["status"], string> = {
-    no_open_recalls: "border-muted-foreground text-muted-foreground",
-    open_recall: "border-amber-600 text-amber-600",
-    urgent: "border-red-600 text-red-600 bg-red-50",
-    unverified: "border-muted-foreground text-muted-foreground",
-};
-
 export default function DashboardPage() {
     return (
         <div className="p-8 space-y-6">
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between">
                 <h1 className="text-2x1 font-bold">Your Vehicles</h1>
             </div>
 
             <div className="space-y-3">
                 {vehicles.map((vehicle) => (
-                    <Card key={vehicle.id}>
-                        <CardContent className="flex items-center justify-between p-4">
-                            <div>
-                                <p className="font-semibold">
-                                    {vehicle.year} {vehicle.make} {vehicle.model}
-                                </p>
-                                <p className="text-sm text-muted-foreground">
-                                    {vehicle.nickname ?? (vehicle.verified ? vehicle.vin : "Manually entered")}
-                                </p>
-                            </div>
-                            <Badge variant="outline" className={statusStyles[vehicle.status]}>
-                                {statusLabels[vehicle.status]}    
-                            </Badge>    
-                        </CardContent>
-                    </Card>
+                    <VehicleCard key={vehicle.id} vehicle={vehicle} />
                 ))}
             </div>
         </div>
