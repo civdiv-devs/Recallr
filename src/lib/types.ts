@@ -25,12 +25,13 @@ export type Vehicle = {
 export type Recall = {
   id: string;
   vehicleId: string;
+  campaignNumber: string;
   summary: string;
   component: string;
   consequence: string;
   remedy: string;
   parkIt: boolean;
-  parkOutside: boolean;
+  parkOutSide: boolean;
   reportedDate: string;
   userStatus: RecallProgress;
 };
