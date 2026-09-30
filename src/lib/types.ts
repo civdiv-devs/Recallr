@@ -1,14 +1,8 @@
 export type RecallStatus =
-  |  "no_open_recalls"
-  |  "open_recall"
-  |  "urgent"
-  |  "unverified";
+  "no_open_recalls" | "open_recall" | "urgent" | "unverified";
 
 export type RecallProgress =
-  |  "open"
-  |  "repair_scheduled"
-  |  "fixed"
-  |  "not_applicable";
+  "open" | "repair_scheduled" | "fixed" | "not_applicable";
 
 export type Vehicle = {
   id: string;
