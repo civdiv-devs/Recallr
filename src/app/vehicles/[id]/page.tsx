@@ -2,7 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getVehicle, getRecallsForVehicle } from "@/lib/mock-data";
 import { StatusBadge } from "@/components/status-badge";
-import { isActive, compareNewestFirst, compareUrgentThenNewest } from "@/lib/recalls";
+import {
+  isActive,
+  compareNewestFirst,
+  compareUrgentThenNewest,
+} from "@/lib/recalls";
 import { TriangleAlert } from "lucide-react";
 import { RecallItem } from "@/components/recall-item";
 
@@ -60,15 +64,19 @@ export default async function VehicleDetailPage({
         <div className="flex gap-3 rounded-md border border-destructive bg-destructive/10 p-4">
           <TriangleAlert
             aria-hidden="true"
-            className="mt-0.5 size-5 shrink-0 text-destructive" />
-              <div className="space-y-1 font-medium">
-                {mustNotDrive && (
-                    <p>Do not drive this vehicle until the recall repair is done.</p>
-                )}
-                {mustParkOutside && (
-                    <p>Park outside and away from buildings until the recall repair is done.</p>
-                )}
-              </div>
+            className="mt-0.5 size-5 shrink-0 text-destructive"
+          />
+          <div className="space-y-1 font-medium">
+            {mustNotDrive && (
+              <p>Do not drive this vehicle until the recall repair is done.</p>
+            )}
+            {mustParkOutside && (
+              <p>
+                Park outside and away from buildings until the recall repair is
+                done.
+              </p>
+            )}
+          </div>
         </div>
       )}
 
@@ -91,8 +99,8 @@ export default async function VehicleDetailPage({
 
         {!vehicle.verified && (
           <p className="max-w-xl rounded-md border bg-muted p-3 text-sm">
-            Recalls are matched by year, make, and model, so some may not
-            apply to your exact vehicle. Add the VIN for exact matching.
+            Recalls are matched by year, make, and model, so some may not apply
+            to your exact vehicle. Add the VIN for exact matching.
           </p>
         )}
 
@@ -103,15 +111,15 @@ export default async function VehicleDetailPage({
       <section className="space-y-3">
         <h2 className="text-lg font-semibold">Open recalls</h2>
         {activeRecalls.length > 0 ? (
-            <ul className="space-y-3">
-              {activeRecalls.map((recall) => (
-                <li key={recall.id}>
-                    <RecallItem recall={recall} />
-                </li>
-              ))}
-            </ul>
+          <ul className="space-y-3">
+            {activeRecalls.map((recall) => (
+              <li key={recall.id}>
+                <RecallItem recall={recall} />
+              </li>
+            ))}
+          </ul>
         ) : (
-            <p className="text-muted-foreground">No open recalls</p>
+          <p className="text-muted-foreground">No open recalls</p>
         )}
       </section>
 
@@ -128,7 +136,6 @@ export default async function VehicleDetailPage({
           </ul>
         </section>
       )}
-
     </div>
   );
 }
