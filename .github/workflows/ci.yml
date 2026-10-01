@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 26
           cache: npm
-      - run: nmp ci
+      - run: npm ci
       - run: npm run lint
       - run: npx tsc --noEmit
       - run: npm run format:check
