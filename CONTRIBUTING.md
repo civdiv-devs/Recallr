@@ -40,14 +40,14 @@ docs/update-readme
 
 ### Types
 
-| Type | Use it for |
-|---|---|
-| `feat` | New functionality users can see |
-| `fix` | Fixing a bug |
+| Type       | Use it for                                  |
+| ---------- | ------------------------------------------- |
+| `feat`     | New functionality users can see             |
+| `fix`      | Fixing a bug                                |
 | `refactor` | Reorganizing code without changing behavior |
-| `docs` | Documentation only |
-| `chore` | Tooling, config, dependencies, housekeeping |
-| `test` | Adding or changing tests |
+| `docs`     | Documentation only                          |
+| `chore`    | Tooling, config, dependencies, housekeeping |
+| `test`     | Adding or changing tests                    |
 
 ### PR titles
 
@@ -219,15 +219,14 @@ The repo is public, so treat it as leaked. Tell the other person right away and 
 
 ## Command cheat sheet
 
-| Goal | Command |
-|---|---|
-| Update local `main` | `git checkout main` then `git pull origin main` |
-| New branch | `git checkout -b feat/name` |
-| Stage and commit | `git add .` then `git commit -m "feat: message"` |
-| First push of a branch | `git push -u origin feat/name` |
-| Later pushes | `git push` |
-| Bring `main` into your branch | `git fetch origin` then `git merge origin/main` |
-| Try someone else's branch | `git fetch origin` then `git checkout feat/their-branch` |
-| Delete a merged local branch | `git branch -D feat/name` |
-| See where you are | `git status` and `git branch` |
-
+| Goal                          | Command                                                  |
+| ----------------------------- | -------------------------------------------------------- |
+| Update local `main`           | `git checkout main` then `git pull origin main`          |
+| New branch                    | `git checkout -b feat/name`                              |
+| Stage and commit              | `git add .` then `git commit -m "feat: message"`         |
+| First push of a branch        | `git push -u origin feat/name`                           |
+| Later pushes                  | `git push`                                               |
+| Bring `main` into your branch | `git fetch origin` then `git merge origin/main`          |
+| Try someone else's branch     | `git fetch origin` then `git checkout feat/their-branch` |
+| Delete a merged local branch  | `git branch -D feat/name`                                |
+| See where you are             | `git status` and `git branch`                            |
