@@ -52,9 +52,11 @@ export function RecallItem({ recall }: { recall: Recall }) {
         <dt className="text-muted-foreground">Reported</dt>
         <dd>{reportedDate}</dd>
         <dt className="text-muted-foreground">
-          <Label htmlFor={progressSelectId}>Status</Label>
+          <Label htmlFor={progressSelectId} className="font-normal">
+            Status
+          </Label>
         </dt>
-        <dd>
+        <dd className="col-span-2 sm:col-span-1">
           <RecallProgressSelect
             id={progressSelectId}
             initialProgress={recall.userStatus}

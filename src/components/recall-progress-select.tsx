@@ -38,12 +38,15 @@ export function RecallProgressSelect({
         }
       }}
     >
-      <SelectTrigger id={id}>
+      <SelectTrigger
+        id={id}
+        className="w-full text-base data-[size=default]:h-10 sm:w-72"
+      >
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
         {Object.entries(progressLabels).map(([value, label]) => (
-          <SelectItem key={value} value={value}>
+          <SelectItem key={value} value={value} className="py-2 text-base">
             {label}
           </SelectItem>
         ))}
