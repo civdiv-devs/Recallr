@@ -1,13 +1,8 @@
 import { Ban, Flame } from "lucide-react";
 import { isActive } from "@/lib/recalls";
-import type { Recall, RecallProgress } from "@/lib/types";
-
-const progressLabels: Record<RecallProgress, string> = {
-  open: "Open",
-  repair_scheduled: "Repair scheduled",
-  fixed: "Fixed",
-  not_applicable: "Doesn't apply to my vehicle",
-};
+import type { Recall } from "@/lib/types";
+import { RecallProgressSelect } from "./recall-progress-select";
+import { Label } from "@/components/ui/label";
 
 export function RecallItem({ recall }: { recall: Recall }) {
   const showDoNotDrive = isActive(recall) && recall.parkIt;
@@ -18,6 +13,8 @@ export function RecallItem({ recall }: { recall: Recall }) {
     "en-US",
     { dateStyle: "medium", timeZone: "UTC" },
   );
+
+  const progressSelectId = `recall=progress=${recall.id}`;
 
   return (
     <article className="space-y-3 rounded-lg border p-4">
@@ -54,8 +51,17 @@ export function RecallItem({ recall }: { recall: Recall }) {
         <dd className="font-mono">{recall.campaignNumber}</dd>
         <dt className="text-muted-foreground">Reported</dt>
         <dd>{reportedDate}</dd>
-        <dt className="text-muted-foreground">Status</dt>
-        <dd>{progressLabels[recall.userStatus]}</dd>
+        <dt className="text-muted-foreground">
+          <Label htmlFor={progressSelectId} className="font-normal">
+            Status
+          </Label>
+        </dt>
+        <dd className="col-span-2 sm:col-span-1">
+          <RecallProgressSelect
+            id={progressSelectId}
+            initialProgress={recall.userStatus}
+          />
+        </dd>
       </dl>
     </article>
   );
