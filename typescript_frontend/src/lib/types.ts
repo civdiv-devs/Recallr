@@ -1,14 +1,8 @@
 export type RecallStatus =
-  |  "no_open_recalls"
-  |  "open_recall"
-  |  "urgent"
-  |  "unverified";
+  "no_open_recalls" | "open_recall" | "urgent" | "unverified";
 
 export type RecallProgress =
-  |  "open"
-  |  "repair_scheduled"
-  |  "fixed"
-  |  "not_applicable";
+  "open" | "repair_scheduled" | "fixed" | "not_applicable";
 
 export type Vehicle = {
   id: string;
@@ -25,12 +19,13 @@ export type Vehicle = {
 export type Recall = {
   id: string;
   vehicleId: string;
+  campaignNumber: string;
   summary: string;
   component: string;
   consequence: string;
   remedy: string;
   parkIt: boolean;
-  parkOutside: boolean;
+  parkOutSide: boolean;
   reportedDate: string;
   userStatus: RecallProgress;
 };
