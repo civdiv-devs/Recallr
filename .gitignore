@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/typescript_frontend/node_modules/
+**/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -12,13 +14,18 @@
 
 # testing
 /coverage
+/typescript_frontend/coverage/
 
 # next.js
 /.next/
+**/.next/
 /out/
+/typescript_frontend/.next/
+/typescript_frontend/out/
 
 # production
 /build
+/typescript_frontend/build/
 
 # misc
 .DS_Store
